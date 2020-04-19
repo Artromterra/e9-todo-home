@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{ todo.author.username }} </h1>
+<h2>Тема: {{ todo.topic }}</h2>
+    <hr>
+    <div>
+        <p>
+           Описание: {{ todo.body }} 
+        </p>
+    </div>
+    <hr>
+        <p>
+            {% if todo.created_at %}
+            {{ todo.created_at.strftime('%H:%M %d-%m-%Y') }}<br>
+            {% endif %}
+            {% if todo.time_end %}
+            {{ todo.time_end.strftime('%H:%M %d-%m-%Y') }}
+            {% endif %} 
+        </p>
+        <p>
+            {% if current_user.username == todo.author.username %}
+            <a href="/todos/edit/{{ todo.id }}">Редактировать</a>
+            <a href="/todo_delete/{{ todo.id }}">Удалить</a>
+            {% endif %}
+        </p>
+{% endblock %}

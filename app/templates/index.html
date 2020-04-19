@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for todo in todos %}
+    <p>
+        <!-- ID: {{ todo.id }} ||  -->
+        Автор: {{ todo.author.username }} || 
+        Тема: {{ todo.topic }} || 
+        Зарегистрирована: {{ todo.created_at.strftime('%H:%M %d-%m-%Y')}}
+    </p>
+    {% endfor %} 
+{% endblock %}   
