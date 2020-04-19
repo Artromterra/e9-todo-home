@@ -1,3 +1,5 @@
+Прект на Heroku: https://e9-todo-home.herokuapp.com/
+
 Для запуска локально:
 
 Создаем контейнер с БД: docker run --rm  --name flask-db -e POSTGRES_PASSWORD=docker -d -p 5432:5432 postgres:12-alpine 
